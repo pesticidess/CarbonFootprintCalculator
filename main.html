@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Greenup.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img src="Greenup.png" style="border-radius: 75px; margin-right: 20px; width: 150px;">
+        <h1 style="display: inline;">Greenup Calculator</h1>
+    </header>
+    <div class="button-container">
+      <a href="javascript:void(0);" class="big-button" style="background-color: #1c524b;">
+          <img src="home.png" alt="Page 1" class="button-image"> <p>Home</p>
+      </a>
+      <a href="transport.html" class="big-button">
+          <img src="delivery.png" alt="Page 2" class="button-image"> <p>Transport</p>
+      </a>
+      <a href="food.html" class="big-button">
+          <img src="cutlery.png" alt="Page 3" class="button-image"> <p>Food</p>
+      </a>
+  </div>
+  
+  
+    
+    <main>
+        <section id="electricity">
+            <div class="input-group">
+                <h2>Electricity Usage</h2>
+                <img src="lightning.png" style="width: 52px; margin-left: 20px;">
+            </div>
+            <label for="electricityUsage">Average Monthly Usage (kWh):</label>
+            <input type="number" id="electricityUsage" placeholder="Enter kWh">
+            <button onclick="calculateElectricity()">Calculate</button>
+            <p id="electricityResult"></p>
+
+            <h3 onclick="toggleEstimation()" style="cursor: pointer; color: #6A9C89;">Not sure? Estimate here</h3>
+            <div id="estimation" style="display: none;">
+                <label for="lightHours">Light Usage / Day:</label>
+                <input type="number" id="lightHours" placeholder="Enter hours" value="0">
+
+                <label for="acHours">Air Conditioner Usage / Day:</label>
+                <input type="number" id="acHours" placeholder="Enter hours" value="0">
+
+                <label for="otherHours">Other Appliances Usage / Day:</label>
+                <input type="number" id="otherHours" placeholder="Enter hours" value="0">
+
+                <button onclick="estimateElectricity()">Estimate Monthly Usage</button>
+                <p id="estimatedUsageResult"></p>
+            </div>
+        </section>
+
+        <section id="biomass">
+        
+          <div class="input-group">
+            <h2 style="display: inline;">Biomass Usage</h2><h3 style="display: inline; margin-left: 10px;">this month</h3>
+            <img src="biomass-energy.png" style="width: 52px; margin-left: 20px;">
+        </div>
+          
+          <label for="organicWaste">Organic Waste:</label>
+              <div class="input-group">
+                  <input type="number" id="organicWaste" placeholder="Amount" class="input-small">
+                  <select id="organicWasteUnit" class="dropdown">
+                      <option value="kg">kg</option>
+                      <option value="g">g</option>
+                  </select>
+              </div>
+              <label for="yardWaste">Yard and Garden Waste:</label>
+              <div class="input-group">
+                  <input type="number" id="yardWaste" placeholder="Amount" class="input-small">
+                  <select id="yardWasteUnit" class="dropdown">
+                      <option value="kg">kg</option>
+                      <option value="g">g</option>
+                  </select>
+              </div>
+              <label for="paperWaste">Paper and Cardboard Waste:</label>
+              <div class="input-group">
+                  <input type="number" id="paperWaste" placeholder="Amount" class="input-small">
+                  <select id="paperWasteUnit" class="dropdown">
+                      <option value="kg">kg</option>
+                      <option value="g">g</option>
+                  </select>
+              </div>
+      
+          <button onclick="calculateBiomass()">Calculate</button>
+          <p id="biomassResult"></p>
+      </section>
+      
+      <section id="lpg">
+        <div class="input-group">
+            <div class="tooltip">   
+                     <h2 style="display: inline;">LPG Usage</h2><h3 style="display: inline; margin-left: 10px;">this month</h3>
+                <span class="tooltiptext">Liquified petroleum gas</span>
+              </div>
+        <img src="gas-cylinder.png" style="width: 52px; margin-left: 20px;">
+        </div>
+
+        <label for="cookingTime" style="margin-top: 50px;">Cooking Time per day:</label>
+            <div class="input-group">
+                <input type="number" id="cookingTime" placeholder="Duration" class="input-small">
+                <select id="cookingTimeUnit" class="dropdown">
+                    <option value="min">min</option>
+                    <option value="hr">hr</option>
+                </select>
+            </div>
+            <label for="showerTime">Hot Shower Time per day:</label>
+            <div class="input-group">
+                <input type="number" id="showerTime" placeholder="Duration" class="input-small">
+                <select id="showerTimeUnit" class="dropdown">
+                    <option value="min">min</option>
+                    <option value="hr">hr</option>
+                </select>
+            </div>
+
+    
+        <button onclick="calculateLPG()">Calculate</button>
+        <p id="lpgResult"></p>
+    </section>
+    
+
+        <section id="total">
+            <h2>Footprint at Home Monthly</h2>
+            <p id="totalResult" style="display: inline;"></p>
+            <p id="absorption-time" style="display: inline;"></p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Carbon Footprint Calculator</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

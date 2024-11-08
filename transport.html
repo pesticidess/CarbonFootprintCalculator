@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Greenup.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img src="Greenup.png" style="border-radius: 75px; margin-right: 20px; width: 150px;">
+        <h1 style="display: inline;">Greenup Calculator</h1>
+    </header>
+    <div class="button-container">
+      <a href="main.html" class="big-button">
+          <img src="home.png" alt="Page 1" class="button-image"> <p>Home</p>
+      </a>
+      <a href="javascript:void(0);" class="big-button" style="background-color: #1c524b;">
+          <img src="delivery.png" alt="Page 2" class="button-image"> <p>Transport</p>
+      </a>
+      <a href="food.html" class="big-button">
+          <img src="cutlery.png" alt="Page 3" class="button-image"> <p>Food</p>
+      </a>
+  </div>
+    <main>
+      <section id="cars">
+        <h2>Cars</h2>
+        <div id="car1Section" style="margin-bottom: 40px;">
+            <h3>Car 1</h3>
+            <div class="input-group">
+            <label for="car1Type">Car Type:</label>
+            <select id="car1Type">
+                <option value="hybrid">Hybrid</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="electric">Electric</option>
+            </select>
+            </div>
+            <label for="car1Distance">Distance Driven (km):</label>
+            <input type="number" id="car1Distance" placeholder="Distance (km)" class="input-small">
+            <button onclick="calculateCarEmissions(1)">Calculate</button>
+            <p id="car1Result"></p>
+        </div>
+    
+        <button id="addCar2Button" onclick="toggleCarSection('car2Section', 'addCar2Button')">+ Add Car 2</button>
+        <div id="car2Section" style="display: none; margin-bottom: 40px">
+            <h3>Car 2</h3>
+            <div class="input-group">
+            <label for="car2Type">Car Type:</label>
+            <select id="car2Type">
+                <option value="hybrid">Hybrid</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="electric">Electric</option>
+            </select>
+            </div>
+            <label for="car2Distance">Distance Driven (km):</label>
+            <input type="number" id="car2Distance" placeholder="Distance (km)" class="input-small">
+            <button onclick="calculateCarEmissions(2)">Calculate</button>
+            <p id="car2Result"></p>
+        </div>
+    
+        <button id="addCar3Button" onclick="toggleCarSection('car3Section', 'addCar3Button')">+ Add Car 3</button>
+        <div id="car3Section" style="display: none; margin-bottom: 40px">
+            <h3>Car 3</h3>
+            <div class="input-group">
+            <label for="car3Type">Car Type:</label>
+            <select id="car3Type">
+                <option value="hybrid">Hybrid</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="electric">Electric</option>
+            </select>
+            </div>
+            <label for="car3Distance">Distance Driven (km):</label>
+            <input type="number" id="car3Distance" placeholder="Distance (km)" class="input-small">
+            <button onclick="calculateCarEmissions(3)">Calculate</button>
+            <p id="car3Result"></p>
+        </div>
+    </section>
+
+    <section id="motorcycle">
+      <h2>Motorcycle</h2>
+      <div class="input-group">
+      <label for="motorcycleSize">Motorcycle Size:</label>
+      <select id="motorcycleSize">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+      </select>
+      </div>
+      <label for="motorcycleDistance">Distance Driven (km):</label>
+      <input type="number" id="motorcycleDistance" placeholder="Distance (km)" class="input-small">
+      <button onclick="calculateMotorcycleEmissions()">Calculate</button>
+      <p id="motorcycleResult"></p>
+  </section>
+  
+        <section id="total">
+            <h2>Total Carbon Footprint</h2>
+            <p id="totalResult" style="display: inline;"></p>
+            <p id="absorption-time" style="display: inline;"></p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Carbon Footprint Calculator</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

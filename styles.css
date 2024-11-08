@@ -1,0 +1,305 @@
+@import url(https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Helvetica&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+  background-color: #E9EFEC; /* Lightest color for background */
+  color: #16423C; /* Dark green text color */
+}
+
+header {
+  font-family: Varela Round, sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  padding: 20px;
+  background: #6A9C89; /* Medium green */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+header h1 {
+  font-size: 4em;
+  font-family: 'Lexend';
+}
+
+main {
+  margin: 20px auto;
+  max-width: 700px;
+  background: #C4DAD2; /* Light green */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 2px solid #6A9C89; /* Medium green border */
+  border-radius: 8px;
+  background-color: #E9EFEC; /* Lightest color for section background */
+}
+
+h2 {
+  border-bottom: 2px solid #16423C; /* Dark green */
+  padding-bottom: 10px;
+  font-family: "Lexend" , sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #16423C; /* Dark green */
+  font-family: 'Varela Round';
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #16423C; /* Dark green */
+}
+
+input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #6A9C89; /* Medium green */
+  border-radius: 5px;
+  background-color: #C4DAD2; /* Light green for input background */
+  color: #16423C; /* Dark green text */
+}
+
+button {
+  padding: 10px 15px;
+  background: #16423C; /* Dark green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button.active {
+  background-color: #0e2925; /* Darker color for active page button */
+  color: #E9EFEC;  /* Adjust text color if needed */
+  border: 2px solid #6A9C89;  /* Optional: add border for emphasis */
+}
+
+
+#cars button {
+  background-color: none;
+  color: #C4DAD2;
+}
+
+#electricity h3{
+  font-size: 16px;
+  text-decoration: none;
+  font-weight:900;
+}
+
+#electricity h3:hover{
+  text-decoration: underline;
+  font-weight:bolder;
+}
+
+button:hover {
+  background: #6A9C89; /* Medium green on hover */
+}
+
+section.disabled {
+  background-color: #B0B0B0; /* Bland color when disabled */
+  color: #6A6A6A; /* Darker text for contrast */
+}
+
+button:disabled {
+  background-color: #B0B0B0; /* Bland button color when disabled */
+  cursor: not-allowed;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between; /* Distribute labels evenly */
+  margin-bottom: 10px; /* Space between rows */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  align-items: center;
+  height: 100%;
+}
+
+.input-small {
+  width: 80px; /* Set a specific width for the input fields */
+  padding: 5px;
+  margin-right: 5px; /* Space between input and dropdown */
+  border: 1px solid #6A9C89;
+  border-radius: 4px;
+}
+
+.dropdown {
+  height: 35px;
+  padding: 5px;
+  margin-bottom: 7px;
+  border: 1px solid #6A9C89;
+  border-radius: 4px;
+  background-color: white;
+  color: #16423C; /* Text color for dropdown */
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex; /* Use flexbox to arrange buttons in a row */
+  justify-content: center; /* Center buttons horizontally */
+  margin-bottom: 20px; /* Space below the buttons */
+}
+
+.big-button {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+  background-color: #6A9C89; /* Button background color */
+  color: white; /* Text color */
+  padding: 15px 30px; /* Padding for button */
+  margin: 0 10px; /* Space between buttons */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Font size */
+  transition: background-color 0.3s; /* Transition for hover effect */
+  height: 50px;
+  width: 7.5%;
+}
+
+.button-image {
+  width: 24px; /* Set width for images */
+  height: 24px; /* Set height for images */
+  margin-right: 7px; /* Space between image and text */
+}
+
+.big-button:hover {
+  background-color: #16423C; /* Darker shade on hover */
+}
+
+a p {
+  font-size: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #16423C;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 0;
+  width: 120px;
+  bottom: 75%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+  visibility: visible;
+}
+
+label {
+   margin-right: 8px;
+}
+
+.input-group label {
+  margin-bottom: 0;
+}
+
+select {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #6A9C89;
+  text-align: center;
+  font-family: 'Varela Round';
+  border: none;
+  cursor: pointer;
+}
+
+option {
+  text-align: center;
+}
+
+.food-container{
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+}
+
+.placeholder {
+  position: relative;
+  top: -250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #16423C;
+  font-family: 'Varela Round';
+  text-align: center;
+}
+
+.food-item {
+  background-color: #6A9C89;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: grab;
+  width: 100px;
+  display: inline-block;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #16423C; /* Dark green */
+}

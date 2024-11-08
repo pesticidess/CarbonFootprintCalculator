@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="Greenup.png" type="image/png">
+  </head>
+  <body>
+    <header>
+        <img src="Greenup.png" style="border-radius: 75px; margin-right: 20px; width: 150px;">
+        <h1 style="display: inline;">Greenup Calculator</h1>
+    </header>
+    <div class="button-container">
+      <a href="main.html" class="big-button">
+        <img src="home.png" alt="Page 1" class="button-image">
+        <p>Home</p>
+      </a>
+      <a href="transport.html" class="big-button">
+        <img src="delivery.png" alt="Page 2" class="button-image">
+        <p>Transport</p>
+      </a>
+      <a href="javascript:void(0);" class="big-button" style="background-color: #1c524b;">
+        <img src="cutlery.png" alt="Page 3" class="button-image">
+        <p>Food</p>
+      </a>
+    </div>
+    <main>
+
+      <section id="foodPortion">
+        <div class="food-container">
+          <h1>Build Your Plate</h1>
+          <div class="food-selection">
+            <h2>Drag Food Items to Your 'Plate'</h2>
+            <div id="items">
+              <div class="food-item" draggable="true" data-type="rice">Rice</div>
+              <div class="food-item" draggable="true" data-type="meat">Meat</div>
+              <div class="food-item" draggable="true" data-type="vegetables">Vegetables</div>
+            </div>
+            <div class="food-container">
+              <canvas id="foodChart"></canvas>
+              <div class="placeholder" style="display: block;">Drag food items here.</div>
+            </div>
+          </div>
+          <div class="results">
+            <h3>Total Carbon Footprint:</h3>
+            <p id="carbon-footprint" style="display: inline;"></p>
+            <p style="display: inline; margin-left: 6px;">kg CO₂</p>
+            <p id="absorption-time" style="display: inline;"></p>
+
+          </div>
+      </section>
+
+    </main>
+    <footer>
+      <p>&copy; 2024 Carbon Footprint Calculator</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Food Pie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Styling for drag items and chart */
+        .item {
+            width: 70px;
+            height: 50px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #6A9C89;
+            color: white;
+            text-align: center;
+            cursor: grab;
+            border-radius: 8px;
+        }
+        .chart-container {
+            width: 400px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Drag and Drop Food Items to the Pie Chart</h2>
+    <div id="items">
+        <div class="item" draggable="true" data-type="rice">Rice</div>
+        <div class="item" draggable="true" data-type="meat">Meat</div>
+        <div class="item" draggable="true" data-type="vegetables">Vegetables</div>
+    </div>
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <script>
+        // Setup initial data
+        const dataCount = { rice: 0, meat: 0, vegetables: 0 };
+        const totalItems = () => dataCount.rice + dataCount.meat + dataCount.vegetables;
+        
+        // Chart.js initialization
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Rice', 'Meat', 'Vegetables'],
+                datasets: [{
+                    label: 'Food Items',
+                    data: [0, 0, 0],
+                    backgroundColor: ['#16423C', '#6A9C89', '#C4DAD2']
+                }]
+            }
+        });
+
+        // Update chart data
+        function updateChart() {
+            const total = totalItems();
+            pieChart.data.datasets[0].data = [
+                (dataCount.rice / total) * 100 || 0,
+                (dataCount.meat / total) * 100 || 0,
+                (dataCount.vegetables / total) * 100 || 0
+            ];
+            pieChart.update();
+        }
+
+        // Drag-and-drop events
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('type', e.target.dataset.type);
+            });
+        });
+
+        document.querySelector('.chart-container').addEventListener('dragover', (e) => e.preventDefault());
+
+        document.querySelector('.chart-container').addEventListener('drop', (e) => {
+            e.preventDefault();
+            const type = e.dataTransfer.getData('type');
+            if (type) {
+                dataCount[type]++;
+                updateChart();
+            }
+        });
+    </script>
+</body>
+</html>
